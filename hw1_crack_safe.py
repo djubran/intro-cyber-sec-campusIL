@@ -20,7 +20,7 @@ def crack_password():
         check_password(passwrd)
         end_time =time.time()
         diff = end_time - start_time
-        if diff>0.2:
+        if diff>0.2: #if function ran for more than 0.2 it means first digit was correct and we moved to check the next one
             break
     
     
@@ -30,7 +30,7 @@ def crack_password():
         check_password(passwrd)
         end_time =time.time()
         diff = end_time - start_time
-        if diff>0.3:
+        if diff>0.3: #if function ran for more than 0.3 it means second digit was correct and we moved to check the next one
             break
     
         
@@ -47,7 +47,7 @@ def crack_password():
     
     for dig4 in range (10):
         passwrd=str(dig1)+str(dig2)+str(dig3)+str(dig4)
-        if check_password(passwrd):
+        if check_password(passwrd): #last digit check by brute forcing  (won't move on to a next digit to campare times)
             break
     
     return passwrd
