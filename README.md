@@ -10,3 +10,10 @@ solution takes 8 sec - simple python code
 You can assume all characters are lowercase letters, with no punctuation or spaces backward
 (so with  k=2  'c' is encrypted by 'a')
 
+hw3-Below is code that implements an InvertedCaesar cipher: its encryption shifts letters k places forward.
+
+Find the plaintext and key of the following message that was encrypted using InvertedCaesar
+
+kyvtrmrcipnzccrkkrtbwifdkyvefikynvjkrkeffe
+ . . .
+ answer:- message : thecavalrywillattackfromthenorthwestatnoon , key=17
