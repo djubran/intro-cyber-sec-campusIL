@@ -1,19 +1,12 @@
-# intro-cyber-sec
+Unlocking Information Security I: From Cryptography to Buffer Overflows
+Institutions: IsraelXTelAvivUniversity
+Subject: Computer Science
+Level: Intermediate
+Subjects:
+->Information Security basic terminology, vulnerabilities, exploits, and an in-depth look at a real case-study (namely, Meltdown).
+->An overview of cryptography with an emphasis on symmetric ciphers.
+->A high-level examination of hash functions and an overview of common hash algorithms.
+->A critical look at different authentication schemes, including passwords, challenge-response, and biometrics.
+->An overview of the most critical vulnerability of all times - buffer overflow, including common variants like Variable and Stack Overflow and simple yet effective mitigation techniques like canaries and DEP
 
-#hw1-crack safe with 4 digits
-The function check_password(password) is used by a safe with 4-digits passwords, and is susceptible to timing attacks. More specifically, it takes it around 0.1 seconds to check one digit – so brute-forcing all the possible combinations will take more than an hour. Can you implement a way to crack its password in less than a minute?
 
-solution takes 8 sec - simple python code
-
-
-#hw2- Implement Caesar’s cipher: implement a function encrypt that given a plaintext string and a key  k  (how many letters to shift), returns a ciphertext where each character is shifted  k  places.
-You can assume all characters are lowercase letters, with no punctuation or spaces backward
-(so with  k=2  'c' is encrypted by 'a')
-
-hw3-Below is code that implements an InvertedCaesar cipher: its encryption shifts letters k places forward.
-
-Find the plaintext and key of the following message that was encrypted using InvertedCaesar
-
-kyvtrmrcipnzccrkkrtbwifdkyvefikynvjkrkeffe
- . . .
- answer:- message : thecavalrywillattackfromthenorthwestatnoon , key=17
