@@ -42,7 +42,7 @@ def vigenere_encrypt(plaintext, codeword):
         print('shortened cofdeword is' ,codeword)
     else: 
         codeword = list(codeword) 
-        for i in range(len(plaintext) -len(codeword)-1): 
+        for i in range(len(plaintext) -len(codeword)): 
           codeword.append(codeword[i % len(codeword)])
           print('codeword repharsed is ',codeword)
     for elem in range( len(codeword)):
