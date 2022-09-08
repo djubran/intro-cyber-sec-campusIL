@@ -9,8 +9,8 @@ Check out itertools.product and use it to your advantage
 
 
 """"
-import string
-from itertools import permutations
+import itertools
+import string 
 
 def simple_hash(s):
     r = 7
@@ -21,13 +21,14 @@ def simple_hash(s):
 
 def crack(s):
     ascii_str = string.printable
-    hashed = simple_hash(s)
+    hashed_s = simple_hash(s)
+    r = 1
     #create permutations of varying lengths
-    for r in range(len(ascii_str)+1): 
+    while True : 
        #check every permutation at fixed length for a match  
-        for perm in list(permutations(ascii_str,r)):
-            if s != ''.join(perm) and simple_hash(s) == simple_hash(''.join(perm)) :
-                return ''.join(perm) #match found return the permuation that provides it
-        
-
-
+        all_permutations = list(itertools.product(ascii_str, repeat=r))
+        for permutation in all_permutations:
+            if s != ''.join(permutation) and simple_hash(s) == simple_hash(''.join(permutation)) :
+                return ''.join(permutation) #match found return the permuation that provides it
+        r += 1
+    return # return s2 such that s != s2 and simple_hash(s) == simple_hash(s2)
