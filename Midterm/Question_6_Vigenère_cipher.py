@@ -37,7 +37,7 @@ def vigenere_encrypt(plaintext, codeword):
     vigenere_enc_txt = ''
     if len(plaintext) == len(codeword): 
         codeword = list(codeword) 
-    if len(plaintext) < len(codeword):
+    elif len(plaintext) < len(codeword):
         codeword = codeword[:len(plaintext)-1]
         print('shortened cofdeword is' ,codeword)
     else: 
