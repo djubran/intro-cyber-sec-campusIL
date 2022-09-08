@@ -10,4 +10,5 @@ def simple_hash(s):
     r = 7
     for char in s:
         r = (r*31 + ord(char)) % 2**16
-    return # do stuff and return the hash
+    return r # do stuff and return the hash
+
