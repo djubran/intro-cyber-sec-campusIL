@@ -20,11 +20,10 @@ Implement a function, vigener_encrypt(plaintext, codeword), which takes a plaint
 
 
 """
+
+
 # plaintext and codeword in CAPITAL LETTERS  only
-
 alphabet_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-
-
 def ceaser_encrypt(plaintext, k):
     encryptedtext = []
     alphabet = alphabet_lowercase.upper()
@@ -33,53 +32,20 @@ def ceaser_encrypt(plaintext, k):
         j = (i + k) % len(alphabet)
         encryptedtext.append(alphabet[j])
     return ''.join(encryptedtext)
-
     
 def vigenere_encrypt(plaintext, codeword):
     vigenere_enc_txt = ''
     if len(plaintext) == len(codeword): 
-        vigenere_enc_txt = codeword 
-    else: 
         codeword = list(codeword) 
-        for i in range(len(plaintext) -len(codeword)): 
-          codeword.append(codeword[i % len(codeword)])
-    for elem in range(0, len(codeword)):
-        vigenere_enc_txt += ceaser_encrypt(plaintext[elem] ,ord(codeword[elem])-ord('A'))
-    return vigenere_enc_txt
-    
-vigenere_encrypt('ATTACKATDAWN','LEMON')
-
-
-
-
-
-"""
-# plaintext and codeword in CAPITAL LETTERS  only
-
-alphabet_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-
-
-def ceaser_encrypt(plaintext, k):
-    encryptedtext = []
-    alphabet = alphabet_lowercase.upper()
-    for letter in plaintext:
-        i = alphabet.index(letter)
-        j = (i + k) % len(alphabet)
-        encryptedtext.append(alphabet[j])
-    return ''.join(encryptedtext)
-
-    
-def vigenere_encrypt(plaintext, codeword):
-    vigenere_enc_txt = ''
-    if len(plaintext) == len(codeword): 
-       # codeword = list(codeword) 
-        pass
+    if len(plaintext) < len(codeword):
+        codeword = codeword[:len(plaintext)-1]
+        print('shortened cofdeword is' ,codeword)
     else: 
         codeword = list(codeword) 
         for i in range(len(plaintext) -len(codeword)-1): 
           codeword.append(codeword[i % len(codeword)])
           print('codeword repharsed is ',codeword)
-    for elem in range(0, len(codeword)):
+    for elem in range( len(codeword)):
         print('A->' ,codeword[elem],' ',ord(codeword[elem])-ord('A'), 'convert this ',plaintext[elem] , 'ietration no. ',elem)
         vigenere_enc_txt += ceaser_encrypt(plaintext[elem] ,ord(codeword[elem])-ord('A'))
         print(vigenere_enc_txt)
@@ -87,4 +53,5 @@ def vigenere_encrypt(plaintext, codeword):
     return vigenere_enc_txt
     
 vigenere_encrypt('ASDFGHJK ','QWERTYUI')
-"""
+vigenere_encrypt('ATTACKATDAWN ','LEMON')
+vigenere_encrypt('YO ','KITCH')
