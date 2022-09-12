@@ -6,6 +6,8 @@ Subject: Computer Science
 
 Level: Intermediate
 
+Coding Language Used: Python3
+
 Subjects:
 
 ->Information Security basic terminology, vulnerabilities, exploits, and an in-depth look at a real case-study (namely, Meltdown).
