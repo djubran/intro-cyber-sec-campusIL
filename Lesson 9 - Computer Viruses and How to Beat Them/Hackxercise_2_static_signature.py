@@ -20,12 +20,11 @@ def sign(line):
     return uniq_sign[0:20]
 
 def scan(paths, signature):
-    malicous_paths = []
+    malicious_paths = []
     for path in paths:
         lines = open(path,'r').readlines()
         for line in lines:        
             line = line.rstrip('\n').encode('utf-8')
             if signature == sign(line): #suspicous agent found
-                malicous_paths.append(path)
-                break
-    return malicous_paths
+                malicious_paths.append(path)
+    return malicious_paths
